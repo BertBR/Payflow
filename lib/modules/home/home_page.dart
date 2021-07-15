@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:payflow/shared/models/billet_model.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_text_styles.dart';
+import 'package:payflow/shared/widgets/billet_list/billet_list_widget.dart';
+import 'package:payflow/shared/widgets/billet_tile/billet_tile.dart';
 
 import 'home_controller.dart';
 
@@ -14,11 +17,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final controller = HomeController();
   final pages = [
-    Container(
-      color: Colors.red,
-    ),
+    Container(child: BilletListWidget()),
     Container(
       color: Colors.blue,
+      child: null,
     ),
   ];
   @override
