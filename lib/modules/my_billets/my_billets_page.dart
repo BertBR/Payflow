@@ -1,3 +1,4 @@
+import 'package:animated_card/animated_card.dart';
 import 'package:flutter/material.dart';
 import 'package:payflow/shared/models/billet_model.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
@@ -32,8 +33,9 @@ class _MyBilletsPageState extends State<MyBilletsPage> {
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: ValueListenableBuilder<List<BilletModel>>(
                   valueListenable: controller.billetsNotifier,
-                  builder: (_, billets, __) =>
-                      BilletInfoWidget(size: billets.length),
+                  builder: (_, billets, __) => AnimatedCard(
+                      direction: AnimatedCardDirection.top,
+                      child: BilletInfoWidget(size: billets.length)),
                 ),
               ),
             ],
